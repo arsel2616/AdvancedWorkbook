@@ -1,0 +1,159 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Component Order Portal</title> 
+
+    <style> 
+
+        body { 
+
+            font-family: 'Trebuchet MS', sans-serif; 
+
+            background-color: #f4f4f4; 
+
+            margin: 40px; 
+
+        } 
+
+        .order-box { 
+
+            background-color: #fff; 
+
+            padding: 25px; 
+
+            border-radius: 8px; 
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+            max-width: 500px; 
+
+            margin: 0 auto; 
+
+        } 
+
+        h2 { 
+
+            text-align: center; 
+
+            margin-bottom: 20px; 
+
+        } 
+
+        label { 
+
+            margin-top: 10px; 
+
+        } 
+
+        select, input { 
+
+            width: 100%; 
+
+            padding: 10px; 
+
+            margin-top: 5px; 
+
+            border: 1px solid #ccc; 
+
+            border-radius: 4px; 
+
+        } 
+
+        button { 
+
+            display: block; 
+
+            width: 100%; 
+
+            padding: 10px; 
+
+            background-color: #007BFF; 
+
+            color: #fff; 
+
+            border: none; 
+
+            border-radius: 4px; 
+
+            margin-top: 20px; 
+
+            cursor: pointer; 
+
+        } 
+
+    </style> 
+
+</head> 
+
+<body> 
+
+    <div class="order-box"> 
+
+        <h2>Component Order Form</h2> 
+
+        <form id="componentForm"> 
+
+            <label for="item">Choose Component:</label> 
+
+            <select id="item" required> 
+
+                <option value="CPU">CPU</option> 
+
+                <option value="Memory">Memory</option> 
+
+                <option value="GPU">GPU</option> 
+
+                <option value="SSD">SSD</option> 
+
+            </select> 
+
+  
+
+            <label for="count">Number of Items:</label> 
+
+            <input type="number" id="count" min="1" required> 
+
+  
+
+            <label for="buyer">Enter Name:</label> 
+
+            <input type="text" id="buyer" required> 
+
+  
+
+            <button type="submit">Place Order</button> 
+
+        </form> 
+
+    </div> 
+
+    <script> 
+
+        document.getElementById('componentForm').addEventListener('submit', function(e) { 
+
+            e.preventDefault(); 
+
+            const item = document.getElementById('item').value; 
+
+            const count = document.getElementById('count').value; 
+
+            const buyer = document.getElementById('buyer').value; 
+
+  
+
+            alert(`Thank you, ${buyer}. Your order for ${count} ${item}(s) is now being processed.`); 
+
+        }); 
+
+    </script> 
+
+</body> 
+
+</html> 
