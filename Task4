@@ -1,0 +1,85 @@
+// Custom Linear Regression in JavaScript 
+
+  
+
+// Example dataset 
+
+const dataset = [ 
+
+    {input: 1, output: 2.1}, 
+
+    {input: 2, output: 2.9}, 
+
+    {input: 3, output: 4}, 
+
+    {input: 4, output: 4.8}, 
+
+    {input: 5, output: 5.3} 
+
+]; 
+
+  
+
+// Compute the average of a number array 
+
+function computeAverage(numbers) { 
+
+    return numbers.reduce((total, num) => total + num, 0) / numbers.length; 
+
+} 
+
+  
+
+// Determine the regression coefficients 
+
+function determineCoefficients(data) { 
+
+    let xAvg = computeAverage(data.map(point => point.input)); 
+
+    let yAvg = computeAverage(data.map(point => point.output)); 
+
+  
+
+    let combinedSum = 0, xSquaredSum = 0; 
+
+  
+
+    for (let point of data) { 
+
+        combinedSum += (point.input - xAvg) * (point.output - yAvg); 
+
+        xSquaredSum += Math.pow(point.input - xAvg, 2); 
+
+    } 
+
+  
+
+    let b1 = combinedSum / xSquaredSum; 
+
+    let b0 = yAvg - b1 * xAvg; 
+
+  
+
+    return { b0, b1 }; 
+
+} 
+
+  
+
+// Main function to execute linear regression 
+
+function executeLinearRegression(data) { 
+
+    const { b0, b1 } = determineCoefficients(data); 
+
+    console.log(`Unique Regression Formula: y = ${b0.toFixed(2)} + ${b1.toFixed(2)}x`); 
+
+} 
+
+  
+
+// Run the custom linear regression function 
+
+executeLinearRegression(dataset); 
+
+ 
