@@ -1,14 +1,4 @@
-//Linear regression is a foundational technique in statistics, often employed to discern relationships within datasets. 
-//Let's delve into a unique JavaScript rendition of this method, tailored for a set of data points. 
 
- 
-
-//In this rendition, we've employed a dataset with 'input' and 'output' as the variable names, diverging from the traditional x and y. 
-//The function names and logic flow have been tailored to ensure uniqueness, while still maintaining the essence of linear regression. 
-//The resulting equation, y=b0+b1x, provides a relationship between the input and output variables. 
-// Custom Linear Regression in JavaScript 
-
-  
 
 // Example dataset 
 
